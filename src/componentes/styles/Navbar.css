@@ -1,0 +1,20 @@
+.bgNav{
+    background-color: #5cc3f3;
+}
+
+.ulPosicion{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 150px;
+}
+
+.colorL{
+    color: #ffff00;
+}
+
+.tamañoCarrito{
+    color: #ffff00;
+    width: 30px;
+    height: 30px;
+}
