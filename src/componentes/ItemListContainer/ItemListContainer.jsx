@@ -1,13 +1,29 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import ItemList from '../ItemList/ItemList'
+import { useEffect, useState } from 'react'
+import {customFetch} from '../mocks/apiNba'
 
-const ItemListContainer = () =>{
+const ItemListContainer = () => {
 
-    return(
+    const [listaProductos, setListaProductos] = useState([]);
+    const [cargando, setCargando] = useState(false)
+
+    useEffect(() => {
+        setCargando(true)
+        customFetch 
+            .then(res => setListaProductos(res))
+            .catch(err => console.log(err))
+            .finally(() => setCargando(false))
+    }, []);
+
+    return (
         <>
-        <h1>El único comercio de NBA en la Argentina</h1>
+            <h2> Bienvenidos a la mejor tienda digital </h2>
 
-        <ItemCount stock={5} />
+            {cargando ? <p>Loading...</p> : <ItemList listaProductos={listaProductos}/>}
+
+            <ItemCount stock={5} initial={1} onAdd={1}/>
         </>
     )
 
