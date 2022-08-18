@@ -1,51 +1,37 @@
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { CartContext } from "../CartContext/CartContext";
 
 
 
 const Cart = () => {
-  const { cart, cartTotal, emptyCart, removeItem } =
-    useContext(CartContext);
+    const prueba = useContext(CartContext);
 
-  if (cart.length === 0) {
     return (
-      <div className="cartIsEmpty">
-        <p>Tu carrito esta vacio </p>
-        <Link to={"/"}>
-          <MyButton text={"Ir a la tienda"} />
-        </Link>
-      </div>
-    );
-  }
-
-  return (
-    <div className="row cart">
-      <h2>Resumen de tu carrito</h2>
-      {cart.map((item, id) => (
-        <article className="cartCard" key={id}>
-          <header className="cardHeader">
-            <img src={item.img} className="img-fluid" alt={item.desc}></img>
-          </header>
-          <main className="cardMain">
-            <h3>
-              {item.name} {item.count === 1 || `X${item.count}`}
-            </h3>
-            <Price amount={item.price * item.count} />
-            <MyButton text={"Eliminar"} onClick={() => removeItem(item.id)} />
-          </main>
-        </article>
-      ))}
-      <div>
-        <Price text={'Total:'} amount={cartTotal()} className={"textAlign"} />
-        <MyButton
-          text={"Vaciar Carrito"}
-          onClick={emptyCart}
-          fixed={"textAlign"}
-        />
-      </div>
+      <>
+      
+          <div className="card mb-3" style={{ maxWidth: '540px' }}>
+              <div className="row g-0">
+                  <div className="col-md-4">
+                      <img src={item.imagen} className="img-fluid rounded-start" alt={item.name} />
+                  </div>
+                  <div className="col-md-8">
+                      <div className="card-body">
+                          <h5 className="card-title">{item.name}</h5>
+                          <p className="card-text">{item.description}</p>
+                      </div>
+                  </div>
+              </div>
     </div>
+          
+
+          {
+              prueba.length === 0 ? <p>El carrito esta vacio</p>
+                  : prueba.map((producto) =><p>{producto.name}</p>)
+          }
+
+
+      </>
   );
 };
 

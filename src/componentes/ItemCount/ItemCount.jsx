@@ -2,9 +2,10 @@ import React from 'react';
 import { useState } from "react";
 import { BsFillBagPlusFill } from "react-icons/bs";
 import { BsFillBagXFill } from "react-icons/bs";
+import Button from '@mui/material/Button';
 
 
-const ItemCount = ({ stock, OnAdd }) => {
+const ItemCount = ({ stock, onAdd }) => {
     const [numero, setNumero] = useState(0);
 
 
@@ -29,6 +30,11 @@ const ItemCount = ({ stock, OnAdd }) => {
                 <span>{numero}</span>
                 <button onClick= {decrementar} className=""> <BsFillBagXFill></BsFillBagXFill> </button>
             </div>
+            {
+                stock && numero
+                ? <Button variant="contained" color="primary" onClick={() => onAdd(numero)}>Agregar al carrito</Button>
+                : <Button variant="contained" disabled>Agregar al carrito</Button>
+            }
         </div>
     );
 };
