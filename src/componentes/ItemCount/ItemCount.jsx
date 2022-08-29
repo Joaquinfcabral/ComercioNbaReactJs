@@ -21,6 +21,7 @@ const ItemCount = ({ stock, onAdd }) => {
         if (numero === 0) return;
         setNumero(numero - 1);
     };
+    
 
 
     return (

@@ -1,11 +1,12 @@
 import React from "react";
 import { useContext } from "react";
-import { CartContext } from "../CartContext/CartContext";
+import { CartContext } from "../../CartContext/CartContext";
 
 
 
-const Cart = ( {item} ) => {
+const Cart = ({ item }) => {
     const prueba = useContext(CartContext);
+
 
     return (
         <>
@@ -24,16 +25,16 @@ const Cart = ( {item} ) => {
                     </div>
                 </div>
             </div>
-          
-
-          {
-               prueba.listaCarrito.length === 0 ? <p>El carrito esta vacio</p>
-               : prueba.listaCarrito.map((producto) => <p> {producto.name} </p>)
-          }
 
 
-      </>
-  );
+            {
+                prueba.listaCarrito.length === 0 ? <p>El carrito esta vacio</p>
+                    : prueba.listaCarrito.map((producto) => <p> {producto.name} </p>)
+            }
+
+
+        </>
+    );
 };
 
 export default Cart;

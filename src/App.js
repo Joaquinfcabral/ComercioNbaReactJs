@@ -1,6 +1,6 @@
-import './App.css';
+import './Styles/app.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CartContextProvider from './componentes/CartContext/CartContext';
+import CartContextProvider from './CartContext/CartContext';
 import NavBar from './componentes/NavBar/Navbar'
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
