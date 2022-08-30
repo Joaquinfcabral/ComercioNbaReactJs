@@ -1,7 +1,8 @@
+import { collection, getDocs }  from 'firebase/firestore'
+import { DB } from './apiFirebase'
 const productos = [{
         id: 1,
         name: 'Camiseta Dallas Mavericks',
-        precio: 4000,
         description: "Remera de los Dallas Mavericks Swinigman edition 2014",
         stock: 15,
         price: 10000,
@@ -11,7 +12,6 @@ const productos = [{
     {
         id: 2,
         name: 'Camiseta San Antonio Spurs',
-        precio: 4000,
         description: "Remera de los San Antonio Spurs Swinigman edition 2016",
         stock: 10,
         price: 10000,
@@ -21,7 +21,6 @@ const productos = [{
     {
         id: 3,
         name: 'Camiseta Golden State Warrios',
-        precio: 4000,
         description: "Remera de los Golden State Warrios Swinigman edition 2020",
         stock: 12,
         price: 10000,
@@ -31,7 +30,6 @@ const productos = [{
     {
         id: 4,
         name: 'Camiseta Los Angeles Lakers',
-        precio: 4000,
         description: "Remera de los Los Angeles Lakers Swinigman edition 2022",
         stock: 5,
         price: 10000,
@@ -41,7 +39,6 @@ const productos = [{
     {
         id: 5,
         name: 'Camiseta Miami Heat',
-        precio: 4000,
         description: "Remera de los Miami Heat Swinigman edition 2022",
         stock: 6,
         price: 10000,
@@ -50,8 +47,7 @@ const productos = [{
     },
     {
         id: 6,
-        name: 'Camiseta Cup NBA',
-        precio: 4000,
+        name: 'Cup NBA',
         description: "Gorra de la NBA edition 2022",
         stock: 20,
         price: 5000,
@@ -61,13 +57,35 @@ const productos = [{
 ]
 
 
+
+
 export const customFetch = new Promise((resolve, reject) => {
-    let condition = true
-    setTimeout(() => {
-        if (condition) {
-            resolve(productos)
-        } else {
-            reject('Error en servidor')
+
+    const colRef= collection(DB, 'Productos');
+
+    getDocs(colRef).then((snapshot) =>{
+      console.log('>> snapshot.docs: ', snapshot.doc)
+
+      const productosConFormato = snapshot.docs.map((rawDoc) => {
+        return{
+            id: rawDoc.id,
+            ...rawDoc.data()
         }
-    }, 3000)
+      })
+    
+      console.log('>> Productos:', productosConFormato)
+      resolve(productosConFormato)
+    }, (error) =>{
+      reject('>> Error al traer los docs: ',error)
+    
+    });
+
+//    let condition = true
+//    setTimeout(() => {
+//        if (condition) {
+//            resolve(productos)
+//        } else {
+//            reject('Error en servidor')
+//        }
+//    }, 3000)
 })
