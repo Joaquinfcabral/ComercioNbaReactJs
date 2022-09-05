@@ -1,7 +1,7 @@
 import React from 'react';
 import '../NavBar/navbar.css'
 import CartWidget from '../CartWidget/CartWidget'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -9,7 +9,7 @@ const NavBar = () => {
         <>
             <nav className="navbar navbar-expand-lg bgNav">
                 <div className="container-fluid">
-                <Link to='/' className="navbar-brand colorL" > Panda's </Link>
+                    <Link to='/' className="navbar-brand colorL" > Panda's </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

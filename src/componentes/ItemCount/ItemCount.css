@@ -1,0 +1,22 @@
+.posicion{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+}
+
+.estiloBtn{
+    padding: 10px;
+}
+
+.diseñoBtn{
+    height: 40px;
+    width: 40px;
+    color: #ffac46;
+}
+
+.diseñoNum{
+    font-size: large;
+}
+

@@ -80,12 +80,4 @@ export const customFetch = new Promise((resolve, reject) => {
     
     });
 
-//    let condition = true
-//    setTimeout(() => {
-//        if (condition) {
-//            resolve(productos)
-//        } else {
-//            reject('Error en servidor')
-//        }
-//    }, 3000)
 })

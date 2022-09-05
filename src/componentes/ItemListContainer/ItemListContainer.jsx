@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
+import '../ItemListContainer/ItemListContainer.css'
 import { customFetch } from '../../Data/apiNba'
 
 
@@ -27,7 +28,7 @@ const ItemListContainer = () =>{
 
     return (
         <>
-         {cargando ? <p>Cargando... </p> : <ItemList listaProductos={listaProductos} />}
+         {cargando ? <p>Cargando... </p> : <ItemList className='diseñoInicio' listaProductos={listaProductos} />}
        
         </>
     )
