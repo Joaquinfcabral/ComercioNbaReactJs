@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from '../Item/Item'
+import '../ItemList/ItemList.css'
 
 const ItemList = ({ listaProductos }) => {
     return (
@@ -7,7 +8,7 @@ const ItemList = ({ listaProductos }) => {
         <>
             <h3>Listado de productos</h3>
 
-            <div className='d-flex justify-content-center flex-nowrap'>
+            <div className='diseñoInicio'>
                 {listaProductos.map((producto) => <Item key={producto.id} producto={producto} />)}
             </div>
         </>
