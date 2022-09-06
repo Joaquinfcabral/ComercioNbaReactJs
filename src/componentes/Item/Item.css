@@ -4,12 +4,21 @@
     border: 3px solid black;
 }
 
+
 .diseñoImg{
-   
     padding: 3px;
 }
 
+.posicionH3{
+    margin-top: 15px;
+    text-align: center;
+
+}
+
 .diseñoInfo{
+    
+    height:fit-content  ;
+    width: fit-content ;
     background-color: #faebd7;
 }
 

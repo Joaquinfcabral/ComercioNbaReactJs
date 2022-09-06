@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom'
 
 
 const Item = ({ producto }) => {
-    const { id, name, imagen, price, description, stock } = producto
+    const { id, title, imagen, price, description, stock } = producto
     return (
         <div className='card estructuraCard' style={{ width: '18rem', margin: '.5rem' }}>
-            <img src={imagen} className='car-img-top diseñoImg' alt={name} />
+            <img src={imagen} className='car-img-top diseñoImg' alt={title} />
+            <div>
+                <h4 className='posicionH3' > {title} </h4>
+            </div>
             <div className='card-body diseñoInfo'>
-                <p className='card-text'>{name}</p>
                 <p className='card-text size'>${price}</p>
                 <p className='card-text'><Link to={`/item/${id}`}><button class="learn-more">
                     <span class="circle" aria-hidden="true">
