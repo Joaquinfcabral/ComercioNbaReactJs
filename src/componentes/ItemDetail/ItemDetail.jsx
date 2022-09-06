@@ -16,7 +16,7 @@ const ItemDetail = ({ item }) => {
 
 
     const [itemCount, setItemCount] = useState(0)
-    const prueba = useContext(CartContext)
+    const {addToCart} = useContext(CartContext)
 
     const onAdd = (qty) => {
         Swal.fire({
@@ -25,7 +25,7 @@ const ItemDetail = ({ item }) => {
             text: 'Su producto ha sido seleccionado',
         })
         setItemCount(qty);
-        prueba.addCartItem(item);
+        addToCart(item);
     }
 
     

@@ -5,18 +5,18 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 const CartContextProvider = ({children}) => {
-    const [listaCarrito, setListaCarrito] = useState([])
+    const [carrito, setCarrito] = useState([])
 
     const addToCart = ( item ) => {
-        setListaCarrito ( [
-            ...listaCarrito,
+        setCarrito ( [
+            ...carrito,
             item        
         ] );
     }
 
 
         return ( 
-        <CartContext.Provider value = {{listaCarrito, addToCart}}> 
+        <CartContext.Provider value = {{carrito, addToCart}}> 
 
         {children} 
         
