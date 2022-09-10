@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdAddShoppingCart } from "react-icons/md";
-import '../NavBar/navbar.css'
+import '../Navbar/navbar.css'
 
 const CartWidget = () => {
     return (

@@ -18,7 +18,7 @@ const ItemListContainer = () =>{
         customFetch
         .then((res) => setListaProductos(res.filter(item => {
             if (id === undefined) return item;
-            return item.category === parseInt(id)
+            return item.categoryId === parseInt(id)
         })))
         .catch((error) => console.log(error))
         .finally(() => setCargando(false))

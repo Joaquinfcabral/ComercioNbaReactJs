@@ -1,6 +1,6 @@
 import React from 'react';
-import '../NavBar/navbar.css'
-import CartWidget from '../CartWidget/CartWidget'
+import '../Navbar/navbar.css'
+import CartWidget from '../Cartwidget/CartWidget'
 import { Link } from 'react-router-dom'
 
 
@@ -16,13 +16,13 @@ const NavBar = () => {
                     <div className=" ulPosicion collapse navbar-collapse" id="navbarNav">
                         <ul className="ul navbar-nav">
                             <li className=" nav-item">
-                                <a className="nav-link colorL active" aria-current="page"><Link to='/category/1'> T-shirts </Link></a>
+                                <a className="nav-link colorL active" aria-current="page"><Link to={'categoryId/3celgiwnOMxvKV7pLt4M'}> T-shirts </Link></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link colorL active"><Link to='/category/2'> Hoodies </Link></a>
+                                <a className="nav-link colorL active"><Link to={'/category/2'}> Hoodies </Link></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link colorL active"><Link to='/category/3'> Cups </Link></a>
+                                <a className="nav-link colorL active"><Link to={'/category/3'}> Cups </Link></a>
                             </li>
                         </ul>
                     </div>
