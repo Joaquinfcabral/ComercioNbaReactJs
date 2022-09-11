@@ -17,14 +17,14 @@ const ItemDetail = ({ item }) => {
 
 
 
-    const onAdd = (qty) => {
+    const onAdd = (quantity) => {
         Swal.fire({
             icon: 'success',
             title: 'Gracias!',
             text: 'Su producto ha sido seleccionado',
         })
-        setItemCount(qty);
-        addProduct(item);
+        setItemCount(quantity);
+        addProduct(item,quantity);
     }
 
     
@@ -40,6 +40,7 @@ const ItemDetail = ({ item }) => {
                         <div className="card-body">
                             <h5 className="card-title">{item.title}</h5>
                             <p className="card-text">{item.description}</p>
+                            <p className="card-text">{item.quantity}</p>
                             <p className='card-text'>${item.price}</p>
                         </div>
                         <div>
