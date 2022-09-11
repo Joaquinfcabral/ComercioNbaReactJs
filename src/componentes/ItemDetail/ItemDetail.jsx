@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
-import { CartContext } from "../../CartContext/CartContext";
+import { useCartContext } from "../../CartContext/CartContext";
 import Swal from 'sweetalert2'
 import '../ItemDetail/ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount';
@@ -12,11 +12,10 @@ import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ item }) => {
 
-
-
-
     const [itemCount, setItemCount] = useState(0)
-    const {addToCart} = useContext(CartContext)
+    const {addProduct} = useCartContext();
+
+
 
     const onAdd = (qty) => {
         Swal.fire({
@@ -25,7 +24,7 @@ const ItemDetail = ({ item }) => {
             text: 'Su producto ha sido seleccionado',
         })
         setItemCount(qty);
-        addToCart(item);
+        addProduct(item);
     }
 
     

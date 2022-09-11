@@ -16,13 +16,13 @@ const NavBar = () => {
                     <div className=" ulPosicion collapse navbar-collapse" id="navbarNav">
                         <ul className="ul navbar-nav">
                             <li className=" nav-item">
-                                <a className="nav-link colorL active" aria-current="page"><Link to={'categoryId/3celgiwnOMxvKV7pLt4M'}> T-shirts </Link></a>
+                                <a className="nav-link colorL active" aria-current="page"><Link to='idCategory/Camisetas'> Jersys </Link></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link colorL active"><Link to={'/category/2'}> Hoodies </Link></a>
+                                <a className="nav-link colorL active"><Link to='idCategory/Buzos'> Hoodies </Link></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link colorL active"><Link to={'/category/3'}> Cups </Link></a>
+                                <a className="nav-link colorL active"><Link to='/idCategory/Gorras'> Cups </Link></a>
                             </li>
                         </ul>
                     </div>

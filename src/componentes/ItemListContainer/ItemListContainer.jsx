@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
 import '../ItemListContainer/ItemListContainer.css'
-import { customFetch } from '../../Data/apiNba'
+import { firestoreFetch } from '../../Data/apiNba'
 
 
 
@@ -11,20 +11,21 @@ const ItemListContainer = () =>{
 
     const [listaProductos, setListaProductos] = useState([]);
     const [cargando, setCargando] = useState(false); 
-    const {id} = useParams();
+    const {idCategory} = useParams();
     
+    //componentDidUpdate
     useEffect(() => {
-        setCargando(true)
-        customFetch
-        .then((res) => setListaProductos(res.filter(item => {
-            if (id === undefined) return item;
-            return item.categoryId === parseInt(id)
-        })))
-        .catch((error) => console.log(error))
-        .finally(() => setCargando(false))
-        
-    }, [id]);
-    
+        firestoreFetch(idCategory)
+            .then(result => setListaProductos(result))
+            .catch(err => console.log(err));
+    }, [idCategory]);
+
+    //componentWillUnmount
+    useEffect(() => {
+        return (() => {
+            setListaProductos([]);
+        })
+    }, []);
 
     return (
         <>
