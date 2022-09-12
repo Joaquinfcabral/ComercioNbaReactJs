@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdAddShoppingCart } from "react-icons/md";
-import '../Navbar/navbar.css'
+import '../navbar/navbar.css'
 import { useCartContext } from '../../CartContext/CartContext';
 
 const CartWidget = () => {
