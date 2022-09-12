@@ -7,3 +7,27 @@
     margin: 20px;
 
 }
+
+.h3Home{
+    text-align: center;
+    margin: 30px;
+
+    font-family: 'Comfortaa', cursive;
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: solid;
+}
+
+.divImg{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.imagenHome{
+    border-radius: 5px;
+
+    width: 1200px;
+    height: 600px;
+}
