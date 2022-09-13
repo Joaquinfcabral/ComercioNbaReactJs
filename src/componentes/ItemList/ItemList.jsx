@@ -6,11 +6,16 @@ import '../ItemList/ItemList.css'
 const ItemList = ({ listaProductos }) => {
     return (
 
-        <>
+        
             <div className='diseñoInicio'>
-                {listaProductos.map((producto) => <Item key={producto.id} producto={producto} />)}
+
+                {
+                listaProductos.length > 0
+                ? listaProductos.map((producto) => <Item key={producto.id} producto={producto} />)
+                : <div class="wobbling-3"></div>
+                }
             </div>
-        </>
+        
     )
 }
 

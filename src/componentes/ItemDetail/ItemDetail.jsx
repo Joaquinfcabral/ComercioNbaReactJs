@@ -2,7 +2,6 @@ import React from "react";
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useContext } from "react";
 import { useCartContext } from "../../CartContext/CartContext";
 import Swal from 'sweetalert2'
 import '../ItemDetail/ItemDetail.css'
@@ -30,6 +29,8 @@ const ItemDetail = ({ item }) => {
 
 
     return (
+        
+
         <div className="d-flex justify-content-center display" >
             <div className="card mb-3" style={{ maxWidth: '800px' }}>
                 <div className="row g-0">
@@ -55,6 +56,8 @@ const ItemDetail = ({ item }) => {
                 </div>
             </div>
         </div>
+
+
     )
 }
 
