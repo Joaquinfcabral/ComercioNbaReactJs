@@ -13,7 +13,7 @@ import ItemCount from '../ItemCount/ItemCount';
 const ItemDetail = ({ item }) => {
 
     const [itemCount, setItemCount] = useState(0)
-    const {addProduct} = useCartContext();
+    const { addProduct } = useCartContext();
 
 
 
@@ -24,14 +24,14 @@ const ItemDetail = ({ item }) => {
             text: 'Su producto ha sido seleccionado',
         })
         setItemCount(quantity);
-        addProduct(item,quantity);
+        addProduct(item, quantity);
     }
 
-    
+
 
     return (
-        <>
-            <div className="card mb-3" style={{ maxWidth: '540px' }}>
+        <div className="d-flex justify-content-center display" >
+            <div className="card mb-3" style={{ maxWidth: '800px' }}>
                 <div className="row g-0">
                     <div className="col-md-4">
                         <img src={item.imagen} className="img-fluid rounded-start" alt={item.title} />
@@ -54,8 +54,7 @@ const ItemDetail = ({ item }) => {
                     </div>
                 </div>
             </div>
-
-        </>
+        </div>
     )
 }
 

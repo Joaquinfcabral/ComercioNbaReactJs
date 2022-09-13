@@ -13,14 +13,12 @@ const ItemListContainer = () =>{
     const [cargando, setCargando] = useState(false); 
     const {idCategory} = useParams();
     
-    //componentDidUpdate
     useEffect(() => {
         firestoreFetch(idCategory)
             .then(result => setListaProductos(result))
             .catch(err => console.log(err));
     }, [idCategory]);
 
-    //componentWillUnmount
     useEffect(() => {
         return (() => {
             setListaProductos([]);
@@ -29,7 +27,7 @@ const ItemListContainer = () =>{
 
     return (
         <>
-         {cargando ? <p>Cargando... </p> : <ItemList className='diseñoInicio' listaProductos={listaProductos} />}
+         {cargando ? <p>Cargando... </p> : <ItemList listaProductos={listaProductos} />}
        
         </>
     )
