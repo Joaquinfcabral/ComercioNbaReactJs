@@ -66,7 +66,7 @@ const Checkout = () => {
         };
         
         const refreshPage = () => {
-            window.location.reload(setTimeout(2000));
+            window.location.reload();
         }
 
         const orderRef = collection(db, "orders");
@@ -84,7 +84,7 @@ const Checkout = () => {
         addDoc(orderRef, order).then((doc) => {
             console.log(doc.id);
             setOrderId(doc.id);
-            refreshPage();
+            setTimeout(refreshPage, 3000);
         });
     };
     if (orderId) {
@@ -158,8 +158,8 @@ const Checkout = () => {
                         autoComplete="off"
                     />
                 </div>
-                <button>{"Confirmar"} </button>
-                <button onClick={handleBack}> {"Volver"} </button>
+                <button className="btnConfirmar" > {"Confirmar"} </button>
+                <button className="btnVolver" onClick={handleBack}> {"Volver"} </button>
             </form>
         </div>
     );
