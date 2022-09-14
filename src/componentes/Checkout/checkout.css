@@ -1,0 +1,67 @@
+
+.orderDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin: 20px;
+    
+}
+
+.orderBackground{
+    background-color: beige;
+    width: 600px;
+    border: 4px solid black;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+.orderBackground h1 {
+    text-align: center;
+    font-style: normal;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.orderBackground p {
+    text-align: center;
+    font-style: normal;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.form {
+    position: relative;
+    padding-top: 10vh;
+    width: 35%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    background-color: aliceblue;
+    border: 5px solid black;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.form div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.divError{
+    display: flex;
+    flex-direction: column;
+    
+}
+.msgError {
+    
+    color: red;
+    font-size: .8rem;
+    text-overflow: ellipsis;
+    line-height: 10px;
+    
+
+}

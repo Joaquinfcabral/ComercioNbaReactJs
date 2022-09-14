@@ -10,7 +10,6 @@ import { firestoreFetch } from '../../Data/apiNba'
 const ItemListContainer = () =>{
 
     const [listaProductos, setListaProductos] = useState([]);
-    const [cargando, setCargando] = useState(false); 
     const {idCategory} = useParams();
     
     useEffect(() => {
@@ -27,7 +26,7 @@ const ItemListContainer = () =>{
 
     return (
         <>
-         {cargando ? <p>Cargando... </p> : <ItemList listaProductos={listaProductos} />}
+           <ItemList listaProductos={listaProductos} />
        
         </>
     )
