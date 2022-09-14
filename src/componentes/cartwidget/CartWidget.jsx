@@ -8,7 +8,7 @@ const CartWidget = () => {
     return (
         <div>
             <MdAddShoppingCart className='tamañoCarrito'></MdAddShoppingCart>
-            <span>{totalProducts() || ''}</span>
+            <span> { totalProducts() || ''}</span>
         </div>
     )
 }

@@ -1,47 +1,28 @@
 import React from 'react';
-import { addDoc, collection, increment, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
-import db from '../../Data/apiFirebase';
 import { useCartContext } from '../../CartContext/CartContext';
 import { Link } from 'react-router-dom';
 import CartItem from '../CartItem/CartItem';
 import '../Cart/cart.css'
 
+{// Creación del carrito
+}
+
 const Cart = () => {
     const { carrito, totalPrice, clearCart } = useCartContext();
 
-    {/*} const order = {
-        buyer:{
-            name: 'Joaquin',
-            email: 'joaquinfcabral@gmail.com',
-            cel:'3413664488',
-            addres:'Siempre viva 1234'
-        },
-        fecha:serverTimestamp(),
-        items: carrito.map (product => ({id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
-        total: totalPrice(),
-    }
+{
+    //Armando rendering para visualizar las dos instancias del componente carrito
+}
 
-    const createOrder = () => {
-        const ordersCollection = collection(db, 'orders');
-        addDoc (ordersCollection, order)
-        .then(({id}) => alert('Su orden es' + (id)))
-        .catch(err => console.log(err))
-        
-        carrito.forEach(async (product) => {
-            const productRef = doc(db, 'Productos', product.id);
-            await updateDoc (productRef, {
-                stock: increment(-product.quantity)
-            })
-        })
-
-    clearCart();
-    }*/}
     if (carrito.length === 0) {
+
+
         return (
-            <>
-                <p>No hay elementos en el carrito</p>
-                <Link to={'/'}> Seguir comprando</Link>
-            </>
+            <div className='diseñoCartVacio' >
+                <p className='diseñoP'>No hay elementos en el carrito</p>
+                
+             <button className='diseñoLink' >   <Link className='nav-link ' to={'/'}> Seguir comprando</Link> </button>
+            </div>
         );
     }
     return (
@@ -59,7 +40,6 @@ const Cart = () => {
                 <div >
                     <button className='btnFinalizarCompra' > <Link className='nav-link' to='/checkout'> Finalizar compra </Link> </button> 
                 </div>
-                {/*<button className='btnFinalizarCompra' onClick={createOrder} > Finalizar Compra</button>*/}
             </div>
 
         </div>

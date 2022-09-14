@@ -1,6 +1,5 @@
 import React from 'react'
 import Item from '../Item/Item'
-import 'animate.css';
 import '../ItemList/ItemList.css'
 
 const ItemList = ({ listaProductos }) => {

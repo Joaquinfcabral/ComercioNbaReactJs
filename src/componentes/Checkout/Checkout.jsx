@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useCartContext } from '../../CartContext/CartContext';
 import db from '../../Data/apiFirebase';
 import { collection, addDoc, Timestamp, doc, updateDoc, getDoc, } from "firebase/firestore";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import '../Checkout/checkout.css'
 import Swal from "sweetalert2";
@@ -29,9 +29,7 @@ const Checkout = () => {
 
     const handleInputChange = (e) => {
         setValues({
-            //se usa spreed para sacar todo
             ...values,
-            //se reemplaza lo que modificas
             [e.target.name]: e.target.value,
         });
     };
@@ -65,9 +63,6 @@ const Checkout = () => {
             time: Timestamp.fromDate(new Date()),
         };
         
-        const refreshPage = () => {
-            window.location.reload();
-        }
 
         const orderRef = collection(db, "orders");
         carrito.forEach((element) => {
@@ -84,7 +79,7 @@ const Checkout = () => {
         addDoc(orderRef, order).then((doc) => {
             console.log(doc.id);
             setOrderId(doc.id);
-            setTimeout(refreshPage, 3000);
+            
         });
     };
     if (orderId) {
@@ -96,6 +91,7 @@ const Checkout = () => {
                     <p>
                         Su numero de orden es: <span className="orderIdSpan">{orderId}</span>{" "}
                     </p>
+                    <button className="btnContNav" onClick={removeProduct} > <Link className="nav-link" to={'/'}> Continuar navegando  </Link>  </button>
                 </div>
                 
             </div>

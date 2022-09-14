@@ -9,6 +9,12 @@
     margin-right: 150px;
 }
 
+.colorL{
+    color: #000000;
+    font-size: medium;
+    text-transform: uppercase;
+}
+
 .tamañoCarrito{
     color: #000000;
     width: 30px;

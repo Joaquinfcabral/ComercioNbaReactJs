@@ -1,0 +1,14 @@
+.diseñoH1{
+    margin-top: 20px;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: double;
+    color: #000064;
+}
+
+.diseñoBrand{
+    text-align: center;
+    color: #000064;
+    font-size: 30px;
+}

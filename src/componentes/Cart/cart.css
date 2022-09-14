@@ -4,6 +4,33 @@
     margin: 20px;
 }
 
+.diseñoCartVacio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+
+    background-color: aliceblue;
+
+    border: 4px solid black;
+    width: 400px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.diseñoP{
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+.diseñoLink{
+    border: 4px solid black;
+    border-radius: 8px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin: 5px;
+}
 
 .cartItemDiseño{
     margin: 20px;
